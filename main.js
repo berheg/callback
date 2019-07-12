@@ -11,10 +11,11 @@ function getPosts(){
         document.body.innerHTML = outPut;
     },1000);
 }
-function creatPost(post){
+function creatPost(post,callback){
     setTimeout(() => {
         posts.push(post);
+        callback();
     },2000);
 }
-getPosts();
-creatPost({ title: 'Post Three', body: 'This is post three'});
+//getPosts();
+creatPost({ title: 'Post Three', body: 'This is post three'},getPosts);
